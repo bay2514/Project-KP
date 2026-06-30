@@ -1,0 +1,600 @@
+/* ═══════════════════════════════
+   GLOBAL & BODY
+═══════════════════════════════ */
+body {
+    background-color: #FFF8E7;
+}
+
+/* ═══════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════ */
+.page-tittle {
+    color: #6F4E37;
+    font-weight: 700;
+    font-size: 32px;
+}
+
+/* ═══════════════════════════════
+   NAVBAR
+═══════════════════════════════ */
+.navbar-custom {
+    background-color: #ffffff;
+    height: 70px;
+    border-bottom: 3px solid #C89467;
+    padding: 0 25px;
+}
+
+.navbar-custom .navbar-brand {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #6F4E37;
+    letter-spacing: 0.5px;
+}
+
+.navbar-custom .navbar-brand:hover {
+    color: #A97142;
+}
+
+.sidebar-hamburger {
+    color: #6F4E37;
+    font-size: 20px;
+    padding: 4px 10px;
+    border-radius: 6px;
+    border: none;
+    background: transparent;
+    transition: background .2s;
+    cursor: pointer;
+}
+
+.sidebar-hamburger:hover {
+    background: #f8f5f0;
+}
+
+/* ═══════════════════════════════
+   SIDEBAR
+═══════════════════════════════ */
+.sidebar {
+    width: 240px;
+    min-height: 100vh;
+    background: linear-gradient(180deg, #E89951 0%, #6F4E37 100%);
+    padding: 1rem 0.75rem;
+    display: flex;
+    flex-direction: column;
+    flex-shrink: 0;
+    transition: width 0.25s ease;
+    overflow: hidden;
+    position: relative;
+}
+
+.sidebar-collapsed {
+    width: 68px;
+}
+
+.sidebar-toggle {
+    position: absolute;
+    top: 14px;
+    right: 12px;
+    width: 30px;
+    height: 30px;
+    border-radius: 6px;
+    border: 1.5px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.15);
+    color: white;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background .2s;
+    padding: 0;
+}
+
+.sidebar-toggle:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0.5rem 0.25rem;
+    margin-top: 8px;
+    white-space: nowrap;
+}
+
+.sidebar-brand-collapsed {
+    justify-content: center;
+}
+
+.sidebar-brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-brand-name {
+    color: white;
+    font-weight: 700;
+    font-size: 15px;
+}
+
+.sidebar-brand-sub {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 11px;
+}
+
+.sidebar-divider {
+    border-color: rgba(255, 255, 255, 0.25);
+    margin: 0.75rem 0;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: rgba(255, 255, 255, .8);
+    text-decoration: none;
+    padding: 10px 12px;
+    border-radius: 10px;
+    transition: background .2s, color .2s;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.sidebar-link:hover {
+    background-color: rgba(255, 255, 255, .15);
+    color: white;
+}
+
+.sidebar-link.active {
+    background-color: #C89467;
+    color: white !important;
+    font-weight: 600;
+}
+
+.sidebar-icon {
+    font-size: 18px;
+    flex-shrink: 0;
+    width: 24px;
+    text-align: center;
+}
+
+.sidebar-label {
+    font-size: 14px;
+}
+
+.sidebar-collapsed .sidebar-link {
+    justify-content: center;
+    padding: 10px 0;
+}
+
+.sidebar-collapsed .sidebar-icon {
+    width: auto;
+}
+
+/* ═══════════════════════════════
+   MAIN CONTENT
+═══════════════════════════════ */
+.main-content {
+    flex: 1;
+    min-width: 0;
+    transition: all 0.25s ease;
+}
+
+/* ═══════════════════════════════
+   DASHBOARD — STAT CARDS
+═══════════════════════════════ */
+.stat-card {
+    border: none;
+    display: flex;
+    box-sizing: border-box;
+    width: 200px;
+    height: 100px;
+    border-radius: 15px;
+    color: white;
+    justify-content: center;
+    padding: 10px;
+    transition: transform .2s;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+}
+
+.card-produk    { background: linear-gradient(135deg, #ECB65F, #8B5E3C); }
+.card-transaksi { background: linear-gradient(135deg, #6F4E37, #ECB65F); }
+.card-penjualan { background: linear-gradient(135deg, #E89951, #8B5E3C); }
+.card-stok      { background: linear-gradient(135deg, #6F4E37, #E89951); }
+
+.dashboard-number {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.dashboard-title {
+    font-size: 15px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* ═══════════════════════════════
+   DASHBOARD — CARD TERLARIS
+═══════════════════════════════ */
+.card-terlaris {
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.card-terlaris .card-header {
+    background: linear-gradient(135deg, #C89467, #A97142) !important;
+    color: white !important;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    padding: 15px;
+    border: none;
+}
+
+/* ═══════════════════════════════
+   SHARED — PAGE HEADER
+═══════════════════════════════ */
+.page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.page-header h2 {
+    color: #6F4E37;
+    font-weight: 700;
+    margin-bottom: 2px;
+}
+
+.page-header p {
+    color: #6c757d;
+    margin: 0;
+}
+
+/* ═══════════════════════════════
+   SHARED — CARD PANEL
+═══════════════════════════════ */
+.panel-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, .08);
+}
+
+/* ═══════════════════════════════
+   SHARED — TABLE
+═══════════════════════════════ */
+.srabi-table thead {
+    background-color: #f8f5f0;
+}
+
+.srabi-table thead th {
+    color: #6F4E37;
+    font-weight: 600;
+    border-bottom: 2px solid #C89467;
+}
+
+.srabi-table tbody td {
+    color: #4E342E;
+    vertical-align: middle;
+}
+
+.srabi-table tbody tr:hover {
+    background-color: #FFF3E0;
+}
+
+.srabi-table tfoot td {
+    background-color: #f8f5f0;
+    color: #6F4E37;
+    font-weight: 700;
+}
+
+/* ═══════════════════════════════
+   SHARED — SEARCH INPUT
+═══════════════════════════════ */
+.search-input {
+    max-width: 300px;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+/* ═══════════════════════════════
+   SHARED — BUTTONS
+═══════════════════════════════ */
+.btn-srabi {
+    background-color: #6F4E37;
+    color: white;
+    border-radius: 8px;
+    border: none;
+    transition: background .2s;
+}
+
+.btn-srabi:hover {
+    background-color: #5a3d2b;
+    color: white;
+}
+
+.btn-srabi-secondary {
+    background-color: #C8813A;
+    color: white;
+    border-radius: 6px;
+    border: none;
+    transition: background .2s;
+}
+
+.btn-srabi-secondary:hover {
+    background-color: #a8671f;
+    color: white;
+}
+
+/* ═══════════════════════════════
+   SHARED — MODAL
+═══════════════════════════════ */
+.modal-srabi .modal-content {
+    border-radius: 12px;
+    border: none;
+}
+
+.modal-srabi .modal-header {
+    background-color: #6F4E37;
+    border-radius: 12px 12px 0 0;
+    color: white;
+    border: none;
+}
+
+.modal-srabi .modal-title {
+    color: white;
+}
+
+.modal-srabi .form-label {
+    color: #6F4E37;
+    font-weight: 600;
+}
+
+.modal-srabi .modal-footer {
+    border-top: 1px solid #e8d8cc;
+}
+
+/* ═══════════════════════════════
+   SHARED — BADGE STATUS STOK
+═══════════════════════════════ */
+.badge-tersedia { background-color: #28a745; color: white; }
+.badge-terbatas { background-color: #ffc107; color: #000; }
+.badge-menipis  { background-color: #dc3545; color: white; }
+
+/* ═══════════════════════════════
+   LAPORAN — STAT MINI CARDS
+═══════════════════════════════ */
+.laporan-card {
+    border: none;
+    border-radius: 12px;
+    color: white;
+    padding: 1rem;
+    transition: transform .2s;
+}
+
+.laporan-card:hover {
+    transform: translateY(-3px);
+}
+
+.laporan-card-label {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    opacity: 0.85;
+}
+
+.laporan-card-value {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.laporan-card-1 { background-color: #6F4E37; }
+.laporan-card-2 { background-color: #A0522D; }
+.laporan-card-3 { background-color: #C8813A; }
+
+/* ═══════════════════════════════
+   TRANSAKSI — CART SECTION
+═══════════════════════════════ */
+.cart-section {
+    background-color: #f8f5f0;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+.cart-total {
+    text-align: right;
+    border-top: 1px solid #e8d8cc;
+    padding-top: 12px;
+    margin-top: 8px;
+    color: #6F4E37;
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* ═══════════════════════════════
+   QTY INPUT
+═══════════════════════════════ */
+.qty-wrap {
+    display: inline-flex;
+    align-items: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background: #6F4E37;
+    flex-shrink: 0;
+}
+
+.qty-btn {
+    width: 38px;
+    height: 42px;
+    border: none;
+    background: transparent;
+    color: white;
+    font-size: 20px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background .15s;
+}
+
+.qty-btn:hover  { background: rgba(255, 255, 255, .15); }
+.qty-btn:active { background: rgba(255, 255, 255, .25); }
+
+.qty-input {
+    width: 68px;
+    height: 42px;
+    border: none;
+    border-left: 1px solid rgba(255, 255, 255, .25);
+    border-right: 1px solid rgba(255, 255, 255, .25);
+    text-align: center;
+    font-size: 15px;
+    font-weight: 600;
+    color: white;
+    background: #8B6343;
+    outline: none;
+}
+
+.qty-input::-webkit-outer-spin-button,
+.qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+/* ═══════════════════════════════
+   LOGIN PAGE
+═══════════════════════════════ */
+.login-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #ffdc8c 0%, #6F4E37 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.login-card {
+    background: white;
+    border-radius: 16px;
+    padding: 2.5rem;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Modal Sukses */
+.success-modal .modal-content {
+    border: none;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.success-modal .modal-header {
+    background: linear-gradient(
+        135deg,
+        #C89467,
+        #A97142
+    );
+    color: white;
+    border: none;
+    justify-content: center;
+}
+
+.success-modal .modal-title {
+    font-weight: 600;
+}
+
+.success-modal .modal-body {
+    padding: 30px;
+    text-align: center;
+}
+
+.success-icon {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 15px;
+    border-radius: 50%;
+    background: #E8F5E9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 45px;
+}
+
+.success-modal h4 {
+    color: #6F4E37;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+.success-modal p {
+    color: #888;
+}
+
+.btn-print-nota {
+    background: #6F4E37;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+}
+
+.btn-print-nota:hover {
+    background: #5A3D2A;
+}
+
+.btn-tutup {
+    background: #adb5bd;
+    border: none;
+    color: white;
+    padding: 10px 18px;
+    border-radius: 10px;
+}
+
+.btn-tutup:hover {
+    background: #8d959c;
+}
+
+@media print {
+
+    body * {
+        visibility: hidden;
+    }
+
+    .modal-content,
+    .modal-content * {
+        visibility: visible;
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        border: none;
+        box-shadow: none;
+    }
+
+    .modal-header,
+    .modal-footer {
+        display: none !important;
+    }
+}
+
+.nota-print {
+  font-family: "Courier New", monospace;
+}
+
+.nota-print table {
+  font-size: 14px;
+}
+
+.nota-print h4 {
+  font-weight: bold;
+}

@@ -444,7 +444,7 @@ app.get('/api/transaksi', (req, res) => {
         ON dt.id_produk = p.id_produk
       WHERE t.tanggal BETWEEN ? AND ? AND t.jenis_transaksi = 'keluar'
       GROUP BY t.id_transaksi
-      ORDER BY t.tanggal DESC, t.id_transaksi DESC
+      ORDER BY t.tanggal ASC
     `;
   
     db.query(query, [dariTanggal, sampaiTanggal], (err, results) => {

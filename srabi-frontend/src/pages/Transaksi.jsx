@@ -193,7 +193,7 @@ function Transaksi() {
                       <span className="badge bg-danger" style={{ padding: "6px 12px" }}>Barang Keluar</span>
                     )}
                   </td>
-                  <td>{t.detail ? t.detail.map((d) => `${d.nama_produk} (${d.jumlah})`).join(", ") : ""}</td>
+                  <td>{t.detail ? t.detail.map((d) => `${d.nama_produk}`).join(", ") : ""}</td>
                   <td><strong style={{ color: "#6F4E37" }}>{formatRp(t.total_harga)}</strong></td>
                   <td><button className="btn btn-sm btn-srabi-secondary" onClick={() => setShowDetail(t)}>Detail</button></td>
                 </tr>

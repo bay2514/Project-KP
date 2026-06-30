@@ -281,7 +281,7 @@ export default function Laporan() {
                       <tr key={t.id_transaksi}>
                         <td>{i + 1}</td>
                         <td>{new Date(t.tanggal).toLocaleDateString("id-ID")}</td>
-                        <td>{t.detail ? t.detail.map((d) => `${d.nama_produk} (${d.jumlah})`).join(", ") : "-"}</td>
+                        <td>{t.detail ? t.detail.map((d) => `${d.nama_produk}`).join(", ") : "-"}</td>
                         <td>{t.detail ? t.detail.reduce((s, d) => s + d.jumlah, 0) : 0}</td>
                         <td><strong style={{ color: "#6F4E37" }}>{formatRp(t.total_harga)}</strong></td>
                       </tr>

@@ -173,8 +173,8 @@ app.post('/api/transaksi', (req, res) => {
         if (errTx) return db.rollback(() => res.status(500).json({ error: "Gagal insert tabel transaksi: " + errTx.message }));
 
         const id_transaksi_baru = resultTx.insertId;
-        const valuesDetail = items.map(item => [id_transaksi_baru, item.id_produk, item.jumlah, item.subtotal]);
-        const queryDetail = `INSERT INTO DETAIL_TRANSAKSI (id_transaksi, id_produk, jumlah, subtotal) VALUES ?`;
+        const valuesDetail = items.map(item => [id_transaksi_baru, item.id_produk, item.jumlah, item.harga, item.subtotal]);
+        const queryDetail = `INSERT INTO DETAIL_TRANSAKSI (id_transaksi, id_produk, jumlah, harga, subtotal) VALUES ?`;
         
         db.query(queryDetail, [valuesDetail], (errDt, resultDt) => {
           if (errDt) return db.rollback(() => res.status(500).json({ error: "Gagal insert detail transaksi: " + errDt.message }));

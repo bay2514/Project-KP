@@ -127,6 +127,7 @@ function Transaksi() {
       id_user: idUser,
       items: cart.map(item => ({
         id_produk: item.id_produk,
+        harga: item.harga, // <-- TAMBAHKAN BARIS INI
         jumlah: item.jumlah,
         subtotal: item.subtotal
       }))

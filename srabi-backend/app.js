@@ -143,7 +143,7 @@ app.delete('/api/produk/:id', (req, res) => {
 
 // --- API TRANSAKSI ---
 app.post('/api/transaksi', (req, res) => {
-  const { tanggal, total_harga, jenis_transaksi, items } = req.body;
+  const { tanggal, total_harga, jenis_transaksi, id_user, items } = req.body;
   if (!tanggal || !total_harga || !jenis_transaksi || !items || items.length === 0) {
     return res.status(400).json({ error: "Data transaksi tidak lengkap atau keranjang kosong!" });
   }
@@ -167,9 +167,9 @@ app.post('/api/transaksi', (req, res) => {
 
     db.beginTransaction((err) => {
       if (err) return res.status(500).json({ error: err.message });
-      const queryTransaksi = `INSERT INTO TRANSAKSI (tanggal, total_harga, jenis_transaksi) VALUES (?, ?, ?)`;
+      const queryTransaksi = `INSERT INTO TRANSAKSI (tanggal, total_harga, jenis_transaksi, id_user) VALUES (?, ?, ?, ?)`;
       
-      db.query(queryTransaksi, [tanggal, total_harga, jenis_transaksi], (errTx, resultTx) => {
+      db.query(queryTransaksi, [tanggal, total_harga, jenis_transaksi, id_user], (errTx, resultTx) => {
         if (errTx) return db.rollback(() => res.status(500).json({ error: "Gagal insert tabel transaksi: " + errTx.message }));
 
         const id_transaksi_baru = resultTx.insertId;

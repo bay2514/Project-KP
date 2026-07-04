@@ -118,10 +118,13 @@ function Transaksi() {
   const handleSimpan = async () => {
     if (cart.length === 0 || !tanggal) return;
 
+    const idUser = localStorage.getItem("id_user") || null;
+
     const payload = {
       tanggal,
       total_harga: totalCart,
       jenis_transaksi: jenisTransaksi, // <-- TAMBAHAN: Kirim jenis ke backend
+      id_user: idUser,
       items: cart.map(item => ({
         id_produk: item.id_produk,
         jumlah: item.jumlah,
@@ -137,6 +140,7 @@ function Transaksi() {
       tanggal,
       total_harga: totalCart,
       jenis_transaksi: jenisTransaksi, 
+      id_user: idUser,
       detail: [...cart],
     };
 

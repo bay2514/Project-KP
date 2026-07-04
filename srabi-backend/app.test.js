@@ -34,7 +34,7 @@ describe('Pengujian Lengkap API Srabi Backend', () => {
     it('seharusnya berhasil (200) jika username dan password benar', async () => {
       const response = await request(app).post('/api/login').send({
         username: 'admin', 
-        password: '123'    // Sesuaikan dengan data nyata di XAMPP Anda
+        password: 'srabi123'    // Sesuaikan dengan data nyata di XAMPP Anda
       });
       // Kita abaikan pengecekan jika gagal karena mungkin kredensial di atas salah
       if (response.statusCode === 200) {
@@ -106,11 +106,11 @@ describe('Pengujian Lengkap API Srabi Backend', () => {
     it('seharusnya gagal (400) jika stok tidak mencukupi (Unhappy Path)', async () => {
       const response = await request(app).post('/api/transaksi').send({
         tanggal: '2026-07-02',
-        total_harga: 1500000, // 100 * 15000
+        total_harga: 1500000, 
         jenis_transaksi: 'keluar',
         items: [{
           id_produk: testProductId,
-          jumlah: 100, // Meminta 100, padahal stok cuma 50
+          jumlah: 100, 
           subtotal: 1500000
         }]
       });

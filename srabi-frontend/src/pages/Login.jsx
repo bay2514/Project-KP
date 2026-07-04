@@ -25,6 +25,8 @@ function Login({ onLogin }) {
         password: form.password
       });
 
+      localStorage.setItem("id_user", response.data.user.id_user);
+
       if (response.data.success) {
         // Kirim data user riil dari database ke fungsi onLogin induk Anda
         onLogin({ 
